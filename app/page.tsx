@@ -198,8 +198,7 @@ const isLoading = status === "submitted";
         
           <div className="bitsom-input-footer">
             <span className="bitsom-input-hint">
-              Tip: Mention where this will be used — LinkedIn, Instagram, email,
-              poster, sponsor deck — for more tailored suggestions.
+              Tell me the output type — Tone of Voice, Brand Identity, Digital, Iconography, Stationery, or Other Collaterals (PPT Template, Bag, Mug, Pen & T-shirt) — for the most accurate suggestions.
             </span>
         
             <button
