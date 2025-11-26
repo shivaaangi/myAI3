@@ -102,8 +102,8 @@ const isLoading = status === "submitted";
 
           <div className="bitsom-panel-footer">
             <p className="bitsom-footer-small">
-              Built for BITSoM students, clubs & committees to keep every touch
-              point — from Roar Fest to Conclave — consistently on-brand.
+              Built for BITSoM students, clubs, committees, & admins to keep every touch
+              point consistently on-brand.
             </p>
           </div>
         </div>
