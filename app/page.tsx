@@ -3,8 +3,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { useChat } from '@/components/use-chat';
-
+import { useChat } from 'ai/react';
 type QuickAction = {
   label: string;
   prompt: string;
