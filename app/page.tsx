@@ -28,9 +28,7 @@ const quickActions: QuickAction[] = [
 ];
 
 export default function HomePage() {
-const { messages, sendMessage, status } = useChat({
-  api: '/api/chat', // or your custom endpoint
-});
+const { messages, sendMessage, status } = useChat();
 
 const [input, setInput] = React.useState('');
 
