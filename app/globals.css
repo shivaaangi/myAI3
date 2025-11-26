@@ -31,6 +31,14 @@ body {
   background: radial-gradient(circle at top left, #fff 0, #fdf7f5 40%, #f3f0ff 100%);
   color: var(--bitsom-blue);
 }
+.bitsom-onword {
+  color: var(--bitsom-orange); /* BITSoM orange for "On" */
+}
+
+.bitsom-brandword {
+  color: #ffffff;               /* White for "Brand" */
+  margin-left: 2px;
+}
 
 /* Root layout for chat page */
 .bitsom-root {
