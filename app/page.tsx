@@ -157,7 +157,13 @@ const isLoading = status === "submitted";
                     </span>
                   </div>
                   <div className="bitsom-message-bubble">
-                    {m.content}
+                    {m.parts?.map((part, index) => {
+                      if (part.type === 'text') {
+                        return <span key={index}>{part.text}</span>;
+                      }
+                      // You can handle other part types (reasoning, tool, etc.) here if needed
+                      return null;
+                    })}
                   </div>
                 </div>
               ))}
