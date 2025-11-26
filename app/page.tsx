@@ -64,7 +64,8 @@ const isLoading = status === "submitted";
             <div className="bitsom-brand-text">
               <p className="bitsom-tagline-eyebrow">BITS School of Management</p>
               <h1 className="bitsom-tagline-title">
-                CampusBrand<span className="bitsom-tagline-dot">AI</span>
+                <span className="bitsom-onword">On</span>
+                <span className="bitsom-brandword">Brand</span>
               </h1>
               <p className="bitsom-tagline-sub">
                 Your on-brand content copilot for BITSoM — grounded in official
