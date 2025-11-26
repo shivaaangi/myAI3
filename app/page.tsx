@@ -118,7 +118,11 @@ const isLoading = status === "submitted";
           <button
             type="button"
             className="bitsom-clear-btn"
-            onClick={() => clearMessages()}
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.location.reload();
+              }
+            }}
             disabled={messages.length === 0}
           >
             New chat
