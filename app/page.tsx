@@ -28,17 +28,13 @@ const quickActions: QuickAction[] = [
 ];
 
 export default function HomePage() {
-  const {
-    messages,
-    input,
-    handleInputChange,
-    handleSubmit,
-    isLoading,
-    setInput,
-    clearMessages,
-  } = useChat({
-    api: '/api/chat',
-  });
+const { messages, sendMessage, status } = useChat({
+  api: '/api/chat', // or your custom endpoint
+});
+
+const [input, setInput] = React.useState('');
+
+const isLoading = status === "streaming" || status === "responding";
 
   const messagesEndRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -168,28 +164,45 @@ export default function HomePage() {
           )}
         </div>
 
-        <form className="bitsom-input-bar" onSubmit={handleSubmit}>
+        <form
+          className="bitsom-input-bar"
+          onSubmit={async (e) => {
+            e.preventDefault();
+        
+            if (!input.trim()) return;
+        
+            await sendMessage({
+              text: input,
+            });
+        
+            setInput("");
+          }}
+        >
           <textarea
             className="bitsom-input"
             placeholder="Paste your draft here and ask, e.g. “Make this LinkedIn post on-brand for BITSoM’s tone of voice.”"
             value={input}
-            onChange={handleInputChange}
+            onChange={(e) => setInput(e.target.value)}
             rows={3}
+            disabled={isLoading}
           />
+        
           <div className="bitsom-input-footer">
             <span className="bitsom-input-hint">
               Tip: Mention where this will be used — LinkedIn, Instagram, email,
               poster, sponsor deck — for more tailored suggestions.
             </span>
+        
             <button
               type="submit"
               className="bitsom-send-btn"
               disabled={isLoading || !input.trim()}
             >
-              {isLoading ? 'Thinking…' : 'Send'}
+              {isLoading ? "Thinking…" : "Send"}
             </button>
           </div>
         </form>
+
       </section>
     </main>
   );
