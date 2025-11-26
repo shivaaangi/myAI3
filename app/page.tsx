@@ -32,7 +32,7 @@ const { messages, sendMessage, status } = useChat();
 
 const [input, setInput] = React.useState('');
 
-const isLoading = status === "streaming" || status === "responding";
+const isLoading = status === "submitted";
 
   const messagesEndRef = React.useRef<HTMLDivElement | null>(null);
 
